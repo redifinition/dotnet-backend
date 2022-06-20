@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "j6sHq/kbCBG6cE/ICYx8M8SZusJZrkpZDrEx2MQKqoU=",
+  "Source": "DataWarehouse",
+  "BasePath": "_content/DataWarehouse",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
