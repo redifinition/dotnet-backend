@@ -275,3 +275,6 @@ D:\大三下\.NET\期末项目后端\DataWarehouse\obj\Debug\net6.0\refint\DataW
 D:\大三下\.NET\期末项目后端\DataWarehouse\obj\Debug\net6.0\DataWarehouse.pdb
 D:\大三下\.NET\期末项目后端\DataWarehouse\obj\Debug\net6.0\DataWarehouse.genruntimeconfig.cache
 D:\大三下\.NET\期末项目后端\DataWarehouse\obj\Debug\net6.0\ref\DataWarehouse.dll
+D:\大三下\.NET\期末项目后端\DataWarehouse\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\大三下\.NET\期末项目后端\DataWarehouse\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\大三下\.NET\期末项目后端\DataWarehouse\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

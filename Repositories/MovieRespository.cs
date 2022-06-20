@@ -13,10 +13,19 @@ namespace Amzaon_DataWarehouse_BackEnd.Repositories
             _datawarhouseContext = datawarehoustContext;
 		}
 
-        public async Task<IEnumerable<Movie>> GetMoviesByName(string movieName)
+
+        public async Task<IEnumerable<Movie>> GetMoviesByName(string? movieName)
         {
-            return  await _datawarhouseContext.Movies.Where(s => s.MovieName.StartsWith(movieName)).Skip(0).Take(25).ToListAsync();
+            if (movieName != null)
+                return await _datawarhouseContext.Movies.Where(s => s.MovieName.StartsWith(movieName)).Skip(0).Take(25).ToListAsync();
+            else
+                return await _datawarhouseContext.Movies.Skip(0).Take(25).ToListAsync();
         }
+        public async Task<Movie> GetMovieByMovieAsin(string movieAsin)
+        {
+            return await _datawarhouseContext.Movies.FirstAsync(s => s.MovieAsin.Equals(movieAsin));
+        }
+
     }
 }
 

@@ -3,9 +3,13 @@ using Amzaon_DataWarehouse_BackEnd.Models;
 using Amzaon_DataWarehouse_BackEnd.Repositories;
 using Amzaon_DataWarehouse_BackEnd.Services;
 using Amzaon_DataWarehouse_BackEnd.Services.ServiceImpl;
+using DataWarehouse.IRepositories;
+using DataWarehouse.Repositories;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,12 +20,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+
 builder.Services.AddDbContext<DataWarehouseContext>(options =>
                     options.UseMySql(builder.Configuration["AmazonDataWarehouse:MySQLConnectionString"],
                     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql")));
 
 // add Repository DI.
 builder.Services.AddScoped<IMovieRepository,MovieRespository>();
+builder.Services.AddScoped<IDirectorRepository, DirectorRepository>();
+builder.Services.AddScoped<IActorRepository, ActorRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 
 
