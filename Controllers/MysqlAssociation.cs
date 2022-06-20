@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using DataWarehouse.Services;
 using Amzaon_DataWarehouse_BackEnd.IRepositories;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace DataWarehouse.Controllers
 {
@@ -16,11 +17,14 @@ namespace DataWarehouse.Controllers
         private readonly IDirectorRepository _directorRepository;
 
         private readonly IMovieRepository _movieRepositiry;
-        public MysqlAssociation(IDirectorRepository directorRepository, IMovieRepository movieRepository)
+
+        private readonly IActorRepository _actorRepository;
+        public MysqlAssociation(IDirectorRepository directorRepository, IMovieRepository movieRepository,IActorRepository actorRepository)
         {
             this._directorRepository = directorRepository;
             _movieRepositiry = movieRepository;
-            mysqlAssociationService = new MysqlAssociationServiceImpl(_movieRepositiry, _directorRepository);
+            _actorRepository = actorRepository;
+            mysqlAssociationService = new MysqlAssociationServiceImpl(_movieRepositiry, _directorRepository,_actorRepository);
         }
 
         [HttpGet]
@@ -31,7 +35,24 @@ namespace DataWarehouse.Controllers
             {
                 object obj = new {index= Index,director = await mysqlAssociationService.GetDirectorNamesByMovieAsin(movieAsin)};
                 
-                return Ok(JsonConvert.SerializeObject(obj));
+                return Ok(obj);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+
+        }
+
+        [HttpGet]
+        [Route("/mysql/association/movie/mainActor")]
+        public async Task<IActionResult> GetMainActorsByMovieAsin(string movieAsin, int Index)
+        {
+            try
+            {
+                object obj = new { index = Index, director = await mysqlAssociationService.GetMainActorNamesByMovieAsin(movieAsin) };
+
+                return Ok(obj);
             }
             catch (Exception ex)
             {

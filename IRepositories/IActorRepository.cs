@@ -6,6 +6,6 @@ namespace DataWarehouse.IRepositories
     {
         Task<List<ViewActorName>> GetActorsByName(string? actorName);
 
-
+        Task<List<ActorMovie>> GetActorMoviesByMovieId(int movieId);
     }
 }
