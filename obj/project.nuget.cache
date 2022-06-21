@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1JZUBvhZ8VNS+IFOwU/vJMDaLGGoxpAzRQxzHaCu96ND1zhaEMTpONgKn2tRYgAS2Gln/S0pwQApizvOGiHjMw==",
+  "dgSpecHash": "e14VVW0CqySt6wx+kHx/h2/o5ZYYg7gL8tSCUUN3W0VOgZG29UuAdwxA4LDOK38jTfmmeE7B1aWFSvrPZUXk4A==",
   "success": true,
   "projectFilePath": "D:\\大三下\\.NET\\期末项目后端\\DataWarehouse\\DataWarehouse.csproj",
   "expectedPackageFiles": [
@@ -91,6 +91,7 @@
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\6.0.6\\microsoft.visualstudio.web.codegenerators.mvc.6.0.6.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\morelinq\\3.3.2\\morelinq.3.3.2.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\mysql.data\\8.0.29\\mysql.data.8.0.29.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\netstandard.library\\2.0.1\\netstandard.library.2.0.1.nupkg.sha512",

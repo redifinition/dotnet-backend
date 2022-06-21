@@ -12,6 +12,11 @@ namespace DataWarehouse.Repositories
             _datawarhouseContext = datawarehoustContext;
         }
 
+        public async Task<List<ViewActorDirector>> GetActorDirectorByActorAndDirector(string actorName, string directorName)
+        {
+            return await _datawarhouseContext.ViewActorDirectors.Where(s => s.ActorName == actorName && s.DirectorName == directorName).ToListAsync();
+        }
+
         public async Task<List<ViewDirectorName>> GetDirectorByName(string? directorName)
         {
             if (directorName != null)
@@ -25,6 +30,11 @@ namespace DataWarehouse.Repositories
         public async Task<List<DirectorMovie>> GetDirectorMoviesByMovieId(int movieId)
         {
             return await _datawarhouseContext.DirectorMovies.Where(x => x.MovieId == movieId).ToListAsync();
+        }
+
+        public Task<ViewDirectorCooperationTime> GetMaxViewDirectorCooperationTime()
+        {
+            return _datawarhouseContext.ViewDirectorCooperationTimes.OrderByDescending(s => s.MovieCount).FirstOrDefaultAsync();
         }
     }
 }

@@ -5,6 +5,7 @@ using Amzaon_DataWarehouse_BackEnd.Services;
 using Amzaon_DataWarehouse_BackEnd.Services.ServiceImpl;
 using DataWarehouse.IRepositories;
 using DataWarehouse.Repositories;
+using ExecutionTime;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+
+
 
 builder.Services.AddDbContext<DataWarehouseContext>(options =>
                     options.UseMySql(builder.Configuration["AmazonDataWarehouse:MySQLConnectionString"],
@@ -49,6 +52,10 @@ builder.Services.AddCors(op => {
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+//执行时间中间件
+app.UseCalculateExecutionTime();//只需在此添加
+
 
 app.UseSwagger();
 app.UseSwaggerUI();

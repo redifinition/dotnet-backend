@@ -7,5 +7,9 @@ namespace DataWarehouse.IRepositories
         Task<List<ViewDirectorName>> GetDirectorByName(string? directorName);
 
         Task<List<DirectorMovie>> GetDirectorMoviesByMovieId(int movieId);
+
+        Task<List<ViewActorDirector>> GetActorDirectorByActorAndDirector(string actorName, string directorName);
+
+        Task<ViewDirectorCooperationTime> GetMaxViewDirectorCooperationTime();
     }
 }
