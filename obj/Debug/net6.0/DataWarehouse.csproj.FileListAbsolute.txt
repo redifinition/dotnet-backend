@@ -279,3 +279,4 @@ D:\大三下\.NET\期末项目后端\DataWarehouse\bin\Debug\net6.0\Microsoft.As
 D:\大三下\.NET\期末项目后端\DataWarehouse\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\大三下\.NET\期末项目后端\DataWarehouse\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 D:\大三下\.NET\期末项目后端\DataWarehouse\bin\Debug\net6.0\MoreLinq.dll
+D:\大三下\.NET\期末项目后端\DataWarehouse\bin\Debug\net6.0\Neo4j.Driver.dll

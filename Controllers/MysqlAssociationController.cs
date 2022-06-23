@@ -11,7 +11,7 @@ namespace DataWarehouse.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MysqlAssociation : ControllerBase
+    public class MysqlAssociationController : ControllerBase
     {
         private readonly IMysqlAssociationService mysqlAssociationService;
 
@@ -20,7 +20,7 @@ namespace DataWarehouse.Controllers
         private readonly IMovieRepository _movieRepositiry;
 
         private readonly IActorRepository _actorRepository;
-        public MysqlAssociation(IDirectorRepository directorRepository, IMovieRepository movieRepository, IActorRepository actorRepository)
+        public MysqlAssociationController(IDirectorRepository directorRepository, IMovieRepository movieRepository, IActorRepository actorRepository)
         {
             this._directorRepository = directorRepository;
             _movieRepositiry = movieRepository;

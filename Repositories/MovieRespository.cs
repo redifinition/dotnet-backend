@@ -48,9 +48,9 @@ namespace Amzaon_DataWarehouse_BackEnd.Repositories
             {
                 //评分查询
                 var scoreResult = await (from movieScore in _datawarhouseContext.MovieScores
-                                         where movieScore.MovieScore1 < Convert.ToSingle(movieInfoDto.maxScore)
-                                         && movieScore.MovieScore1 > Convert.ToSingle(movieInfoDto.minScore)
-                                         && movieScore.PositiveCommentRating * 100 > movieInfoDto.positive
+                                         where movieScore.MovieScore1 <= Convert.ToSingle(movieInfoDto.maxScore)
+                                         && movieScore.MovieScore1 >= Convert.ToSingle(movieInfoDto.minScore)
+                                         && movieScore.PositiveCommentRating * 100 >= movieInfoDto.positive
                                          select movieScore.MovieId).ToListAsync();
                 if (movieInfoDto.movieName != null)
                     results = results.Intersect(scoreResult);
