@@ -25,11 +25,14 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
 
-
+// mysql - datawarehouse
 builder.Services.AddDbContext<DataWarehouseContext>(options =>
                     options.UseMySql(builder.Configuration["AmazonDataWarehouse:MySQLConnectionString"],
                     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql")));
-
+//mysql - datawarehouse-traceabilityQuery
+builder.Services.AddDbContext<DataWarehouseContext>(options =>
+                    options.UseMySql(builder.Configuration["AmazonDataWarehouse:MySQLTraceabilityQueries"],
+                    Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql")));
 
 //add neo4j driver.
 builder.Services.AddSingleton(GraphDatabase.Driver(builder.Configuration["AmazonDataWarehouse:Neo4jConnectionSettings:Server"],
