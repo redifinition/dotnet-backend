@@ -4,6 +4,7 @@ using Amzaon_DataWarehouse_BackEnd.Repositories;
 using Amzaon_DataWarehouse_BackEnd.Services;
 using Amzaon_DataWarehouse_BackEnd.Services.ServiceImpl;
 using DataWarehouse.IRepositories;
+using DataWarehouse.Models;
 using DataWarehouse.Repositories;
 using ExecutionTime;
 using Microsoft.AspNetCore.Http.Features;
@@ -30,7 +31,7 @@ builder.Services.AddDbContext<DataWarehouseContext>(options =>
                     options.UseMySql(builder.Configuration["AmazonDataWarehouse:MySQLConnectionString"],
                     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql")));
 //mysql - datawarehouse-traceabilityQuery
-builder.Services.AddDbContext<DataWarehouseContext>(options =>
+builder.Services.AddDbContext<data_warehouseContext>(options =>
                     options.UseMySql(builder.Configuration["AmazonDataWarehouse:MySQLTraceabilityQueries"],
                     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql")));
 
@@ -46,6 +47,7 @@ builder.Services.AddScoped<IActorRepository, ActorRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<INeo4jMovieRepository, Neo4jMovieRepository>();
 builder.Services.AddScoped<INeo4jRelationRepository, Neo4jRelationRepository>();
+builder.Services.AddScoped<ITraceabilityRepository, TraceabilityRepository>();
 
 
 
